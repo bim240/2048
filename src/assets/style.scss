@@ -1,0 +1,59 @@
+@import "./number_section.scss";
+@import "./replay_section.scss";
+
+.dashboard_parent_conatiner {
+  background-color: white;
+  color: #776e65;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  .dashboard_contanier {
+    width: 400px;
+    // border: 1px solid green;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+  .game_header {
+    display: flex;
+    justify-content: space-between;
+    .game_name {
+      font-size: 4rem;
+      font-weight: 900;
+    }
+    .score_section {
+      width: 45%;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      .current_score {
+        background-color: #bbada0;
+        padding: 0.2rem 1.2rem;
+        border-radius: 2px;
+        height: 55%;
+        text-align: center;
+        margin-right: 0.3rem;
+        .score_num {
+          font-weight: 900;
+          font-size: 1.3rem;
+        }
+      }
+      .best_score {
+        background-color: #bbada0;
+        padding: 0.2rem 1.2rem;
+        border-radius: 2px;
+        height: 55%;
+        text-align: center;
+        .score_num {
+          font-weight: 900;
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .game_dispciption {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+}

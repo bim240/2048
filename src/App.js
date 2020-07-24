@@ -1,9 +1,11 @@
 import React from "react";
+import "./assets/style.scss";
+import DashBoard from "./component/DashBoard";
 
 function App() {
   return (
-    <div>
-      <h1 style={{ color: "black" }}>app</h1>
+    <div className="dashboard_parent_conatiner">
+      <DashBoard />
     </div>
   );
 }

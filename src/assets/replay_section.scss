@@ -1,0 +1,14 @@
+.replay_container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  .icon {
+    font-size: 3rem;
+    font-weight: 900;
+    color: inherit;
+  }
+  .text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
