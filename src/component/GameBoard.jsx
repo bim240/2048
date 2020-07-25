@@ -6,14 +6,18 @@ import addNumber from "../utils/addNumber";
 
 function GameBoard(props) {
   let [data, setData] = useState(props.data);
-  // console.log(data, "data");
   const initializeAddNumber = () => {
-    // console.log("CALLING INITIALIZE");
-    // console.log(data);
     if (data) {
-      let newData = addNumber(data);
-      newData = addNumber(newData);
-      console.table(newData);
+      let newData = addNumber(
+        data.map(function (arr) {
+          return arr.slice();
+        })
+      );
+      newData = addNumber(
+        newData.map(function (arr) {
+          return arr.slice();
+        })
+      );
       setData(newData);
       props.dispatch({ type: "ADD_NEW_NUMBER", payload: newData });
     }
@@ -21,19 +25,16 @@ function GameBoard(props) {
 
   useEffect(() => {
     initializeAddNumber();
-    // console.log("useeffect");
-  });
+    console.log("effect");
+  }, []);
   return (
     <>
       {data ? (
         <div className="number_conatiner">
-          {/* {console.log(data, "return", data[0][0])} */}
-          {data.map((row, index1) => {
-            console.log(row, "row");
+          {data.map((row) => {
             return (
               <div className="number_row" key={uuid()}>
-                {/* {console.log(row, "row")} */}
-                {row.map((digit, index2) => {
+                {row.map((digit) => {
                   return (
                     <div className={`single_block ${digit}`} key={uuid()}>
                       {console.log(digit, "digit")}

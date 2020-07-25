@@ -11,7 +11,7 @@ export default function addNumber(data) {
     let rand2 = Math.floor(Math.random() * 4);
     attempts++;
     if (data[rand1][rand2] === 0) {
-      data[rand1][rand2] = Math.random() > 0.5 ? 2 : 2;
+      data[rand1][rand2] = 2;
       added = true;
     }
     if (attempts > 50) {
