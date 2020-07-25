@@ -25,7 +25,6 @@ function GameBoard(props) {
 
   useEffect(() => {
     initializeAddNumber();
-    console.log("effect");
   }, []);
   return (
     <>
@@ -36,8 +35,7 @@ function GameBoard(props) {
               <div className="number_row" key={uuid()}>
                 {row.map((digit) => {
                   return (
-                    <div className={`single_block ${digit}`} key={uuid()}>
-                      {console.log(digit, "digit")}
+                    <div className={`single_block b${digit}`} key={uuid()}>
                       {digit !== 0 ? digit : ""}
                     </div>
                   );
