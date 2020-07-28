@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "2048",
+  "name": "Challenge your brain in a fun way",
   "icons": [
     {
       "src": "favicon.ico",
