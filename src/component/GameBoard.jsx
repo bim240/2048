@@ -15,12 +15,7 @@ import Winner from "./Winner";
 import GameOver from "./GameOver";
 
 function GameBoard(props) {
-  let [data, setData] = useState([
-    [2, 4, 8, 16],
-    [32, 512, 64, 128],
-    [256, 4, 16, 32],
-    [1024, 512, 0, 0],
-  ]);
+  let [data, setData] = useState(props.data);
   let [gameOver, setGameOver] = useState(props.gameOver);
   let [winner, setWinner] = useState(props.winner);
   let [shouldCheckWinner, setShouldCheckWinner] = useState(true);
@@ -37,7 +32,6 @@ function GameBoard(props) {
         setShouldCheckWinner(false);
       }
     } else {
-      console.log("gameover");
       setGameOver(true);
       props.dispatch({ type: "GAME_OVER" });
     }
@@ -60,25 +54,20 @@ function GameBoard(props) {
     switch (event.keyCode) {
       case 38:
         let newData1 = swipeUp(data);
-        console.log(newData1, "new data1");
         handleUpdateScoreAndSetNewData(newData1);
 
         break;
       case 40:
         let newData2 = swipeDown(data);
-        console.log(newData2, "new data2");
         handleUpdateScoreAndSetNewData(newData2);
         break;
       case 37:
         let newData3 = swipeLeft(data);
-        console.log(newData3, "new data3");
         handleUpdateScoreAndSetNewData(newData3);
         break;
       case 39:
         let newData4 = swipeRight(data);
-        console.log(newData4, "new data4");
         handleUpdateScoreAndSetNewData(newData4);
-
         break;
       default:
         break;
