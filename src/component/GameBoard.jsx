@@ -225,7 +225,7 @@ function GameBoard(props) {
   );
 }
 function mapStateToProps(state) {
-  // localStorage.setItem("state", JSON.stringify(state));
+  localStorage.setItem("state", JSON.stringify(state));
   return {
     data: state.data,
     replay: state.replay,

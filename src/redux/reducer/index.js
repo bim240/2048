@@ -73,6 +73,7 @@ export default function gameInfo(state = initialState, action) {
         redo: [],
       };
     case "RESET_GAME":
+      localStorage.clear();
       return {
         data: [
           [0, 0, 0, 0],

@@ -69,7 +69,7 @@ function ReplaySection(props) {
 }
 
 function mapStateToProps(state) {
-  // localStorage.setItem("state", JSON.stringify(state));
+  localStorage.setItem("state", JSON.stringify(state));
   return {
     replay: state.replay,
     undo: state.undo,

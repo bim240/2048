@@ -7,16 +7,17 @@ import addNumber from "../utils/addNumber";
 
 function DashBoard(props) {
   const hanldeResetGame = () => {
-    localStorage.clear();
-    props.dispatch({ type: "RESET_GAME" });
-    var newData = addNumber([
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-    ]);
-    newData = addNumber(newData);
-    props.dispatch({ type: "ADD_NEW_NUMBER", payload: newData });
+    if (!props.replay) {
+      props.dispatch({ type: "RESET_GAME" });
+      var newData = addNumber([
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+      ]);
+      newData = addNumber(newData);
+      props.dispatch({ type: "ADD_NEW_NUMBER", payload: newData });
+    }
   };
 
   return (
@@ -35,4 +36,9 @@ function DashBoard(props) {
   );
 }
 
-export default connect()(DashBoard);
+function mapStateToProps(state) {
+  return {
+    replay: state.replay,
+  };
+}
+export default connect(mapStateToProps)(DashBoard);
