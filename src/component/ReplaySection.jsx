@@ -1,36 +1,81 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import { GrPlayFill } from "react-icons/gr";
 import { IoIosUndo, IoIosRedo } from "react-icons/io";
 
-class ReplaySection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <section className="replay_container">
-        <div className="undo_button">
+function ReplaySection(props) {
+  const hanldeReplay = () => {
+    props.dispatch({ type: "REPLAY_START" });
+  };
+  const hanldeUndo = () => {
+    props.dispatch({ type: "UNDO" });
+  };
+  const handleRedo = () => {
+    props.dispatch({ type: "REDO" });
+  };
+  return (
+    <section className="replay_container">
+      {/* undo button */}
+      {props.undo && props.undo.length ? (
+        <div onClick={hanldeUndo} className="undo_button">
           <div className="icon">
             <IoIosUndo />
           </div>
           <div className="text">Undo</div>
         </div>
-        <div className="replay_button">
+      ) : (
+        <div>
           <div className="icon">
-            <GrPlayFill className="icon" />
+            <IoIosUndo />
           </div>
-          <div className="text">Replay</div>
+          <div className="text">Undo</div>
         </div>
-        <div className="redo_button">
+      )}
+      {/* replay button */}
+      {props.replayDataLength <= 1 || props.replay ? (
+        <div>
+          <div className="icon">
+            <GrPlayFill />
+          </div>
+          <div className="text">Play</div>
+        </div>
+      ) : (
+        <div onClick={hanldeReplay} className="replay_button">
+          <div className="icon">
+            <GrPlayFill />
+          </div>
+          <div className="text">Play</div>
+        </div>
+      )}
+      {/* redo button */}
+
+      {props.redo && props.redo.length ? (
+        <div onClick={handleRedo} className="redo_button">
           <div className="icon">
             <IoIosRedo />
           </div>
           <div className="text">Redo</div>
         </div>
-      </section>
-    );
-  }
+      ) : (
+        <div>
+          <div className="icon">
+            <IoIosRedo />
+          </div>
+          <div className="text">Redo</div>
+        </div>
+      )}
+    </section>
+  );
 }
 
-export default ReplaySection;
+function mapStateToProps(state) {
+  // localStorage.setItem("state", JSON.stringify(state));
+  return {
+    replay: state.replay,
+    undo: state.undo,
+    redo: state.redo,
+    replayDataLength: state.replayAllData.length,
+  };
+}
+
+export default connect(mapStateToProps)(ReplaySection);

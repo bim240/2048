@@ -1,0 +1,43 @@
+.winner_container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  opacity: 0.9;
+  text-align: center;
+  color: inherit;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #bbada0;
+  .winner_title {
+    width: 100%;
+    font-size: 3.5rem;
+    margin-top: 1rem;
+  }
+  .btn_continue_game {
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #776b5f;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-right: 0.3rem;
+    cursor: pointer;
+  }
+  .btn_restart_game {
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #776b5f;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}

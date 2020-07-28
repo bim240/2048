@@ -2,6 +2,15 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 2rem;
+  .replay_button {
+    cursor: pointer;
+  }
+  .redo_button {
+    cursor: pointer;
+  }
+  .undo_button {
+    cursor: pointer;
+  }
   .icon {
     font-size: 3rem;
     font-weight: 900;

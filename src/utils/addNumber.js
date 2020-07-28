@@ -1,3 +1,5 @@
+import checkIfGameOver from "./checkGameOver";
+
 export default function addNumber(data) {
   let added = false;
   let gridFull = false;
@@ -15,7 +17,11 @@ export default function addNumber(data) {
       added = true;
     }
     if (attempts > 50) {
-      //  game over check
+      gridFull = true;
+
+      if (checkIfGameOver(data)) {
+        return false;
+      }
     }
   }
   return data;

@@ -1,3 +1,7 @@
+.game_board_container {
+  position: relative;
+}
+
 .number_conatiner {
   display: flex;
   flex-direction: column;
@@ -34,38 +38,56 @@
   }
   .b2 {
     background-color: #ebdcd0 !important;
+    transition: all 500ms;
     color: #776e65 !important;
-    // background-color: black !important;
   }
   .b4 {
     background-color: #e9dbba !important;
+    transition: all 500ms;
     color: #776e65 !important;
   }
   .b8 {
     background-color: #e9a067 !important;
+    transition: all 500ms;
   }
   .b16 {
     background-color: #f08151 !important;
+    transition: all 500ms;
   }
   .b32 {
     background-color: #f2654f !important;
+    transition: all 500ms;
   }
   .b64 {
     background-color: #f1462c !important;
+    transition: all 500ms;
   }
   .b128 {
     background-color: #e7c65e !important;
+    transition: all 500ms;
   }
   .b256 {
     background-color: #e8c350 !important;
+    transition: all 500ms;
   }
   .b512 {
     background-color: #e8be40 !important;
+    transition: all 500ms;
   }
   .b1024 {
     background-color: #e8bb31 !important;
+    transition: all 500ms;
   }
   .b2048 {
     background-color: #e7b723 !important;
+    transition: all 500ms;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .number_conatiner {
+    .single_block {
+      height: 55px !important;
+    }
   }
 }
