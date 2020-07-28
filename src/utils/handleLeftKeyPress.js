@@ -1,4 +1,5 @@
 import addNumber from "./addNumber";
+import checkIfGameOver from "./checkGameOver";
 
 const swipeLeft = (data) => {
   let oldGrid = data;
@@ -36,7 +37,8 @@ const swipeLeft = (data) => {
     }
   }
   if (JSON.stringify(oldGrid) !== JSON.stringify(newArray)) {
-    if (addNumber(newArray)) {
+    addNumber(newArray);
+    if (checkIfGameOver(newArray)) {
       return false;
     }
   }

@@ -1,4 +1,5 @@
 import addNumber from "./addNumber";
+import checkIfGameOver from "./checkGameOver";
 
 const swipeRight = (data) => {
   let oldData = data;
@@ -36,7 +37,8 @@ const swipeRight = (data) => {
     }
   }
   if (JSON.stringify(newArray) !== JSON.stringify(oldData)) {
-    if (addNumber(newArray)) {
+    addNumber(newArray);
+    if (checkIfGameOver(newArray)) {
       return false;
     }
   }

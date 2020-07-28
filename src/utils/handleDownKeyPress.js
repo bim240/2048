@@ -1,4 +1,5 @@
 import addNumber from "./addNumber";
+import checkIfGameOver from "./checkGameOver";
 
 const swipeDown = (data) => {
   let b = data.map((arr) => arr.slice());
@@ -34,8 +35,8 @@ const swipeDown = (data) => {
     }
   }
   if (JSON.stringify(b) !== JSON.stringify(oldData)) {
-    if (addNumber(b)) {
-      console.log("gameover in keypree");
+    addNumber(b);
+    if (checkIfGameOver(b)) {
       return false;
     }
   }

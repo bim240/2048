@@ -1,3 +1,5 @@
+import checkIfGameOver from "./checkGameOver";
+
 const { default: addNumber } = require("./addNumber");
 
 const swipeUp = (data) => {
@@ -34,7 +36,8 @@ const swipeUp = (data) => {
     }
   }
   if (JSON.stringify(oldData) !== JSON.stringify(b)) {
-    if (addNumber(b)) {
+    addNumber(b);
+    if (checkIfGameOver(b)) {
       return false;
     }
   }
