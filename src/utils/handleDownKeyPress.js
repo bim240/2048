@@ -34,7 +34,10 @@ const swipeDown = (data) => {
     }
   }
   if (JSON.stringify(b) !== JSON.stringify(oldData)) {
-    addNumber(b);
+    if (addNumber(b)) {
+      console.log("gameover in keypree");
+      return false;
+    }
   }
   return b;
 };

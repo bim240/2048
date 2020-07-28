@@ -36,7 +36,11 @@ const swipeRight = (data) => {
     }
   }
   if (JSON.stringify(newArray) !== JSON.stringify(oldData)) {
-    addNumber(newArray);
+    if (addNumber(newArray)) {
+      console.log("gameover in keypree");
+
+      return false;
+    }
   }
   return newArray;
 };

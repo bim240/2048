@@ -36,7 +36,10 @@ const swipeLeft = (data) => {
     }
   }
   if (JSON.stringify(oldGrid) !== JSON.stringify(newArray)) {
-    addNumber(newArray);
+    if (addNumber(newArray)) {
+      console.log("gameover in keypree");
+      return false;
+    }
   }
   return newArray;
 };
