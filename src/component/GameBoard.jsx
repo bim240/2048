@@ -113,7 +113,7 @@ function GameBoard(props) {
     if (props.replay) {
       var replayLength = props.replayAllData.length;
       props.replayAllData.map((initialGameHistory, index) => {
-        const timer = setTimeout(
+        setTimeout(
           function () {
             props.dispatch({
               type: "REPLAY_START",
@@ -121,15 +121,18 @@ function GameBoard(props) {
             });
             if (replayLength === index + 1) {
               props.dispatch({
-                type: "REPLAY_END",
+                type: "REPLAY_STOP",
               });
             }
           },
           index * 2000,
           initialGameHistory
         );
-        return () => clearTimeout(timer);
       });
+    } else {
+      for (let i = 0; i < 1000; i++) {
+        window.clearTimeout(i);
+      }
     }
   }, [props.replay]);
 
