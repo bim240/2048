@@ -13,7 +13,11 @@ function ScoreSection(props) {
           </div>
           <div className="best_score">
             <div> Best</div>
-            <div className="score_num">230296</div>
+            <div className="score_num">
+              {JSON.parse(localStorage.getItem("highestScore")) > 230296
+                ? JSON.parse(localStorage.getItem("highestScore"))
+                : 230296}
+            </div>
           </div>
         </div>
       </div>
