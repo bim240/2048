@@ -36,7 +36,7 @@ It contains a total of 8 files.
 2. calculateScore.js - A function that is used for calculating the score of the game.
 3. calculateWinner.js - A function to decide the winner.
 4. checkGameOver.js - A function to check if the game is over or not.
-5. handleDownKeyPress.js - A function to handle down arrow key and swipe down in touch screen.
-6. handleUpKeyPress.js - A function to handle up arrow key and swipe up in the touch screen.
-7. handleLeftKeyPress.js - A function to handle left arrow key and swipe left in touch screen.
-8. handleRightKeyPress.js - A function to handle the right arrow key and swipe right in touch screen.
+5. handleDownKeyPress.js - A function to handle down arrow key and swipe down in touch screen. Takes board data as parameter and returns new board data if game is not over else return false.
+6. handleUpKeyPress.js - A function to handle up arrow key and swipe up in the touch screen. Takes board data as parameter and returns new board data if game is not over else return false.
+7. handleLeftKeyPress.js - A function to handle left arrow key and swipe left in touch screen. Takes board data as parameter and returns new board data if game is not over else return false.
+8. handleRightKeyPress.js - A function to handle the right arrow key and swipe right in touch screen. Takes board data as parameter and returns new board data if game is not over else return false.
