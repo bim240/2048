@@ -41,7 +41,7 @@ export default function gameInfo(state = initialState, action) {
         replay: true,
         nowReplayingData: action.payload,
       };
-    case "REPLAY_END":
+    case "REPLAY_STOP":
       return {
         ...state,
         replay: false,
