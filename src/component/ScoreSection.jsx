@@ -13,7 +13,7 @@ function ScoreSection(props) {
           </div>
           <div className="best_score">
             <div> Best</div>
-            <div className="score_num">5878</div>
+            <div className="score_num">230296</div>
           </div>
         </div>
       </div>
