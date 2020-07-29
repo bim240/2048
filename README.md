@@ -1,6 +1,6 @@
 ## 2048 Game
 
-to play this game [Click Here](https://letsplay2048.netlify.app/)
+To play this game [Click Here](https://letsplay2048.netlify.app/)
 
 #### Assests Directory
 
