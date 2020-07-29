@@ -73,7 +73,7 @@ export default function gameInfo(state = initialState, action) {
         redo: [],
       };
     case "RESET_GAME":
-      localStorage.clear();
+      localStorage.removeItem("state");
       return {
         data: [
           [0, 0, 0, 0],
@@ -96,6 +96,11 @@ export default function gameInfo(state = initialState, action) {
         gameOver: false,
       };
     case "INCREASE_SCORE":
+      localStorage.setItem(
+        "highestScore",
+        JSON.stringify(state.score + action.payload)
+      );
+
       return {
         ...state,
         score: state.score + action.payload,
