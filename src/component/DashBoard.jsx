@@ -4,6 +4,7 @@ import ReplaySection from "./ReplaySection";
 import ScoreSection from "./ScoreSection";
 import GameBoard from "./GameBoard";
 import addNumber from "../utils/addNumber";
+import { addnewNumber } from "../redux/action";
 
 function DashBoard(props) {
   const hanldeResetGame = () => {
@@ -16,7 +17,7 @@ function DashBoard(props) {
         [0, 0, 0, 0],
       ]);
       newData = addNumber(newData);
-      props.dispatch({ type: "ADD_NEW_NUMBER", payload: newData });
+      props.dispatch(addnewNumber(newData));
     }
   };
 
